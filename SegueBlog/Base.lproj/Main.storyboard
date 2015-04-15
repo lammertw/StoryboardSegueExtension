@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--Book View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="BookViewController" customModule="SegueBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJG-lQ-WRR">
+                                <rect key="frame" x="261" y="125" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDP-nH-uie">
+                                <rect key="frame" x="256" y="188" width="89" height="30"/>
+                                <state key="normal" title="Show Author">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="b82-LN-zbl" kind="presentation" identifier="" id="RUP-F6-bz9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="rDP-nH-uie" secondAttribute="centerX" id="CZt-Bd-gKg"/>
+                            <constraint firstAttribute="centerX" secondItem="WJG-lQ-WRR" secondAttribute="centerX" id="SIJ-2W-v1Q"/>
+                            <constraint firstItem="WJG-lQ-WRR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="61" id="Wc2-Dk-mQv"/>
+                            <constraint firstItem="rDP-nH-uie" firstAttribute="top" secondItem="WJG-lQ-WRR" secondAttribute="bottom" constant="42" id="zRr-vi-Rdn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2uc-Eo-Lnj"/>
+                    <connections>
+                        <outlet property="bookTitleLabel" destination="WJG-lQ-WRR" id="uLY-Om-oR2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1259" y="434"/>
+        </scene>
+        <!--Author View Controller-->
+        <scene sceneID="Tfd-Ik-a6w">
+            <objects>
+                <viewController id="d31-hk-qPh" customClass="AuthorViewController" customModule="SegueBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RbK-oT-cfh"/>
+                        <viewControllerLayoutGuide type="bottom" id="wzd-n2-Atl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OBr-Hd-4Ok">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdB-8Z-AKA">
+                                <rect key="frame" x="251" y="139" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gdB-8Z-AKA" firstAttribute="top" secondItem="RbK-oT-cfh" secondAttribute="bottom" constant="75" id="XCH-TD-0e4"/>
+                            <constraint firstAttribute="centerX" secondItem="gdB-8Z-AKA" secondAttribute="centerX" id="jlG-jZ-zuR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZM6-ld-H1h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0Oi-1P-A4t">
+                            <connections>
+                                <action selector="dismiss:" destination="d31-hk-qPh" id="K6U-fv-624"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="authorNameLabel" destination="gdB-8Z-AKA" id="TXw-D2-FtA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUH-Yh-sCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2865" y="434"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ths-61-CCr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b82-LN-zbl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qW9-Xk-4fM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d31-hk-qPh" kind="relationship" relationship="rootViewController" id="xaS-aO-mrW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQT-hZ-nud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2053" y="434"/>
+        </scene>
+    </scenes>
+</document>
